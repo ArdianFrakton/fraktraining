@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'CircularStd';
+  font-display: fallback;
+  font-weight: 400;
+  // src: url('../fonts/CircularStd-Book.woff') format('woff'),
+  // url('../fonts/CircularStd-Book.woff') format('woff');
+}
+@font-face {
+  font-family: 'CircularStd';
+  font-display: fallback;
+  font-weight: 500;
+  // src: url('../fonts/CircularStd-Medium.woff') format('woff'),
+  // url('../fonts/CircularStd-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'CircularStd';
+  font-display: fallback;
+  font-weight: 700;
+  // src: url('../fonts/CircularStd-Bold.woff') format('woff'),
+  // url('../fonts/CircularStd-Bold.woff') format('woff');
+}
+
+
+$font-primary: "CircularStd";
+$font-secondary: "GT Walsheim";
+$color-primary: #FFBB00;
+$color-secondary: #d1e4ec;
+$color-third: #707070;
+$color-fourth: #FFF5D9;
+$color-fifth: #505050;
+$titles-color: #2B2B2B;
+$text-color: #B4B4B4;
+$mainly-blue: #d2cae8;
+$eclipse-color: #363636;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+$fw-black: 900;
+
+$comp-bg-grey: #F1EBFA;
+$bg-grey: #f3f3f3;
+$bg-grey-dark: #D5D5D5;
+$bg-floral-white: #f2effb;
+$bg-teal-white: rgba(209, 228, 236, 0.31);
+$bg-green: #42A846;
+$prefix: "frak";
+
+$white-color: #fff;
+$black-color: #000;
+$danger-color: #ff604f;
+
+$sidebar-width: 94px;

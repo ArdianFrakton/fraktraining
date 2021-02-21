@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/scss/variables';
+@import 'assets/scss/_mixins';
+@import 'poly-fluid-sizing';
+@import 'assets/scss/_component';
+@import 'assets/scss/header';
+@import 'assets/scss/footer';
+@import 'assets/scss/component/main';
+@import 'assets/scss/component/main-page';

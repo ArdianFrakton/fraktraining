@@ -1,0 +1,147 @@
+.#{$prefix}-footer {
+    &__logo {
+        width: fit-content;
+    }
+    &__text {
+        @include poly-fluid-sizing('font-size', (576px: 18px, 992px: 22px));
+        @include lh-unitless(35, 22);
+        font-weight: $fw-medium;
+    }
+    &__address {
+        font-size: 15px;
+        @include lh-unitless(20, 15);
+        font-weight: $fw-medium;
+        white-space: pre-line;
+    }
+    &__subcribe {
+        &__title {
+            font-size: 13px;
+            @include lh-unitless(14, 13);
+            font-weight: $fw-medium;
+        }
+        &__form {
+            input {
+                width: calc(260px - 33px);
+                max-width: calc(100% - 33px);
+                padding: 9px 14px;
+                @include poly-fluid-sizing('font-size', (576px: 16px, 992px: 14px));
+                @include lh-unitless(14, 14);
+                font-weight: $fw-medium;
+                background-color: #F2F2F2;
+                border: none;
+                &::-webkit-input-placeholder {
+                    @include poly-fluid-sizing('font-size', (576px: 14px, 992px: 11px));
+                    @include lh-unitless(14, 11);
+                    font-weight: $fw-medium;
+                    color: rgba($black-color, .8);
+                }
+                &::-moz-placeholder {
+                    @include poly-fluid-sizing('font-size', (576px: 14px, 992px: 11px));
+                    @include lh-unitless(14, 11);
+                    font-weight: $fw-medium;
+                    color: rgba($black-color, .8);
+                }
+                &:-ms-input-placeholder {
+                    @include poly-fluid-sizing('font-size', (576px: 14px, 992px: 11px));
+                    @include lh-unitless(14, 11);
+                    font-weight: $fw-medium;
+                    color: rgba($black-color, .8);
+                }
+                &:-moz-placeholder {
+                    @include poly-fluid-sizing('font-size', (576px: 14px, 992px: 11px));
+                    @include lh-unitless(14, 11);
+                    font-weight: $fw-medium;
+                    color: rgba($black-color, .8);
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+            button {
+                @include poly-fluid-sizing('height', (576px: 38px, 992px: 36px));
+                @include poly-fluid-sizing('width', (576px: 38px, 992px: 36px));
+                font-size: 0;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url("data:image/svg+xml,%3Csvg id='send' xmlns='http://www.w3.org/2000/svg' width='13.567' height='13.001' viewBox='0 0 13.567 13.001'%3E%3Cpath id='Path_79' data-name='Path 79' d='M8.75,17.612v2.622a.424.424,0,0,0,.765.251L11.049,18.4Z' transform='translate(-3.804 -7.656)' fill='%232b2b2b'/%3E%3Cpath id='Path_80' data-name='Path 80' d='M13.389.079a.424.424,0,0,0-.442-.031L.228,6.69a.424.424,0,0,0,.059.777L3.822,8.676l7.53-6.439L5.526,9.258l5.926,2.025a.434.434,0,0,0,.137.023.424.424,0,0,0,.419-.361L13.562.487a.425.425,0,0,0-.174-.408Z' transform='translate(0 0)' fill='%232b2b2b'/%3E%3C/svg%3E%0A");
+                background-color: #F2F2F2;
+                border: none;
+                &:not([disabled]):hover {
+                    cursor: pointer;
+                }
+                &[disabled] {
+                    opacity: .4;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+    &__copyright {
+        @include poly-fluid-sizing('font-size', (576px: 15px, 992px: 18px));
+        @include lh-unitless(40, 18);
+        color: $black-color;
+        border-top: 3px solid #F2F2F2;
+        &__text {
+            font-weight: $fw-medium;
+        }
+    }
+    &__link {
+        font-weight: $fw-medium;
+        color: $black-color;
+        @include transition(all, .3s);
+        &:hover {
+            color: $color-primary;
+        }
+        &--menu {
+            @include poly-fluid-sizing('font-size', (576px: 15px, 992px: 14px));
+            @include lh-unitless(23, 14);
+            font-weight: $fw-medium;
+        }
+    }
+    &__social-media {
+        &__item {
+            &:not(:last-child) {
+                @include poly-fluid-sizing('margin-right', (576px: 10px, 992px: 20px));
+            }
+        }
+    }
+}
+.msg-alert {
+    flex: none;
+    width: 100%;
+    max-width: 300px;
+    font-size: 14px;
+}
+.#{$prefix}-cookie-consent {
+    &__link {
+        color: $color-primary;
+        @include transition(all, .3s);
+        &:hover {
+            color: $white-color;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .#{$prefix}-footer {
+        &__logo {
+            &__img {
+                height: 30px;
+                width: auto;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .#{$prefix}-footer {
+        &__subcribe {
+            &__input {
+                width: calc(100% - 33px);
+            }
+        }
+    }
+}
