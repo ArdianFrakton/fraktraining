@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~11.2.1",
     "@angular/platform-browser-dynamic": "~11.2.1",
     "@angular/router": "~11.2.1",
+    "contentful": "^8.1.7",
     "poly-fluid-sizing": "^1.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
@@ -42,5 +43,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.2"
+  },
+  "contentful": {
+    "spaceID": "vuvkra9skroj",
+    "accessToken": "OuoBuoe1Lo7bjRgNJbqjNgUmGJRntKJ8x_WXf1io2Y0"
   }
 }

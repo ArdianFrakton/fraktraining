@@ -1,0 +1,23 @@
+.#{$prefix}-movies {
+    &__img-icon {
+        height: 25px;
+        width: 25px;
+        object-fit: cover;
+    }
+    &__title {
+        @include poly-fluid-sizing('font-size', (576px: 34px, 768px: 43px, 992px: 55px));
+        @include lh-unitless(65, 55);
+        color: $titles-color;
+    }
+    &__description {
+      @include poly-fluid-sizing('font-size', (576px: 18px, 992px: 24px));
+      @include lh-unitless(32, 24);
+      color: $titles-color;
+    }
+    &__button {
+        @include poly-fluid-sizing('padding-top', (576px: 10px, 992px: 20px));
+        @include poly-fluid-sizing('padding-right', (576px: 10px, 992px: 30px));
+        @include poly-fluid-sizing('padding-bottom', (576px: 10px, 992px: 20px));
+        @include poly-fluid-sizing('padding-left', (576px: 10px, 992px: 30px));
+    }
+}

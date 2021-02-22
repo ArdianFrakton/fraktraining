@@ -3,16 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MoviesComponent } from './movies/movies.component';
+import { MovieSingleComponent } from './movie-single/movie-single.component';
+import { ContentfulService } from './contentful.service';
 
+import { RouterModule, Routes }   from '@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/movies', pathMatch: 'full' },
+  { path: 'movies',  component: MoviesComponent }
+];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MoviesComponent,
+    MovieSingleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    ContentfulService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
