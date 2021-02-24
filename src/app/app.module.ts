@@ -11,6 +11,7 @@ import { RouterModule, Routes }   from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: '/movies', pathMatch: 'full' },
+  { path: 'movies/:id', component: MovieSingleComponent },
   { path: 'movies',  component: MoviesComponent }
 ];
 @NgModule({

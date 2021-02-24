@@ -17,6 +17,11 @@
         <td class="fr-pl-8 fr-pr-8">{{ movie.fields.director }}</td>
         <td class="fr-pl-8 fr-pr-8">{{ movie.fields.year }}</td>
         <td class="fr-pl-8 fr-pr-8">{{ movie.fields.mins }}</td>
+        <td class="fr-pl-8 fr-pr-8">
+          <span>
+            <a href="/movies/{{ movie.fields.slug }}">View More</a>
+          </span>
+        </td>
       </tr>
     </tbody>
   </table>

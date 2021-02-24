@@ -8,7 +8,6 @@ import { Entry } from 'contentful';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-  // define private class properties
   public movies: Entry<any>[] = [];
 
   constructor(private contentfulService: ContentfulService) { }
@@ -16,7 +15,6 @@ export class MoviesComponent implements OnInit {
   ngOnInit() {
     this.contentfulService.getMovies()
     .then(movies => {
-      console.log(movies);
       this.movies = movies
     })
   }
