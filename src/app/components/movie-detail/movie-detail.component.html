@@ -1,0 +1,46 @@
+<div *ngIf="movie.fields" class="fr-container">
+  <h1 class="fr-text-center">{{ movie.fields.title }}</h1>
+  <div class="fr-row detail">
+    <div class="fr-col-3">
+      <img class="fr-movies__img-detail" src="{{movie.fields.image.fields.file.url}}">
+    </div>
+    <div class="fr-col-7">
+      <hr>
+      <h3>Title: {{ movie.fields.title }}</h3>
+      <p>Director: {{ movie.fields.director }}</p>
+      <h5>Country: {{ movie.fields.country }}</h5>
+      <hr>
+      <p>Year: {{ movie.fields.year }}</p>
+      <p>Mins: {{ movie.fields.mins }}</p>
+      <hr>
+    </div>
+  </div>
+</div>
+<hr>
+<hr>
+<h1 class="fr-text-center fr-pt-64 fr-pb-64">All Movies</h1>
+<table class="fr-w-100 fr-pb-64">
+  <thead>
+    <tr>
+      <th></th>
+      <th class="fr-pt-12 fr-pb-12">Title</th>
+      <th>Director</th>
+      <th class="fr-pt-12 fr-pb-12 fr-pl-8 fr-pr-8">Year</th>
+      <th class="fr-pt-12 fr-pb-12 fr-pl-8 fr-pr-8">Mins</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies" class="fr-pb-12">
+      <td class="fr-text-center"><img class="fr-movies__img-icon" src="{{movie.fields.image.fields.file.url}}"></td>
+      <td class="fr-pl-8 fr-pr-8">{{ movie.fields.title }}</td>
+      <td class="fr-pl-8 fr-pr-8">{{ movie.fields.director }}</td>
+      <td class="fr-pl-8 fr-pr-8">{{ movie.fields.year }}</td>
+      <td class="fr-pl-8 fr-pr-8">{{ movie.fields.mins }}</td>
+      <td class="fr-pl-8 fr-pr-8">
+        <span>
+          <button (click)="movieDetail(movie.fields.slug)">View details</button>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

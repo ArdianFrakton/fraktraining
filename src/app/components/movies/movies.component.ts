@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentfulService } from '../contentful.service';
+import { ContentfulService } from '../../service/contentful.service';
 import { Entry } from 'contentful';
 
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss']
+  styleUrls: ['./movies.component.scss'],
+  providers: [ContentfulService]
 })
 export class MoviesComponent implements OnInit {
-  public movies: Entry<any>[] = [];
+  movies: Entry<any>[] = [];
 
   constructor(private contentfulService: ContentfulService) { }
 

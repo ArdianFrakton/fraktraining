@@ -27,4 +27,10 @@ export class ContentfulService {
     }, query))
     .then(res => res.items);
   }
+
+// fetch Movie with a given slug and return one of them
+  getMovie(slug: string): Promise<Entry<any>> {
+    return this.getMovies({ 'fields.slug': slug })
+    .then(items => items[0])
+  }
 }

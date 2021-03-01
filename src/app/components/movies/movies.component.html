@@ -1,0 +1,26 @@
+<h1 class="fr-text-center fr-pt-64 fr-pb-64">Movies</h1>
+<table class="fr-w-100 fr-pb-64">
+  <thead>
+    <tr>
+      <th></th>
+      <th class="fr-pt-12 fr-pb-12">Title</th>
+      <th>Director</th>
+      <th class="fr-pt-12 fr-pb-12 fr-pl-8 fr-pr-8">Year</th>
+      <th class="fr-pt-12 fr-pb-12 fr-pl-8 fr-pr-8">Mins</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies" class="fr-pb-12">
+      <td class="fr-text-center"><img class="fr-movies__img-icon" src="{{movie.fields.image.fields.file.url}}"></td>
+      <td class="fr-pl-8 fr-pr-8">{{ movie.fields.title }}</td>
+      <td class="fr-pl-8 fr-pr-8">{{ movie.fields.director }}</td>
+      <td class="fr-pl-8 fr-pr-8">{{ movie.fields.year }}</td>
+      <td class="fr-pl-8 fr-pr-8">{{ movie.fields.mins }}</td>
+      <td class="fr-pl-8 fr-pr-8">
+        <span>
+          <a mat-button [routerLink]="['/movies', movie.fields.slug]">View details</a>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
