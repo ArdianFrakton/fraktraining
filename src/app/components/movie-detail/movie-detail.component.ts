@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../../service/contentful.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-detail',
@@ -12,9 +12,11 @@ export class MovieDetailComponent implements OnInit {
   movies: any;
   movie: any;
   private slug: any;
+  private sub: any;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private ContentfulService: ContentfulService,
   ) {
     this.movie = {};
@@ -24,26 +26,19 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit() {
     this.ContentfulService.getMovies()
     .then(movies => {
-      const filteredMovie = movies.filter((el) => {
-        return el.fields.slug === this.slug;
-      });
-      const filteredArray = movies.filter((item) => {
-        return item.fields.slug !== this.slug;
-      });
+      const filteredMovie = movies.find((el) => el.fields.slug === this.slug);
+      const filteredArray = movies.filter((item) => item.fields.slug !== this.slug);
       this.allMovies = movies;
-      this.movie = filteredMovie[0];
+      this.movie = filteredMovie;
       this.movies = filteredArray;
     })
   }
   movieDetail(movieSlug: string){
     this.slug = movieSlug;
-    const filteredMovie = this.allMovies.filter((element: any) => {
-      return element.fields.slug === movieSlug;
-    });
-    const filteredArray = this.allMovies.filter((item: any) => {
-      return item.fields.slug !== movieSlug;
-    });
-    this.movie = filteredMovie[0];
+    this.router.navigate(['/movies', movieSlug]);
+    const filteredMovie = this.allMovies.find((element: any) => element.fields.slug === this.slug);
+    const filteredArray = this.allMovies.filter((item: any) => item.fields.slug !== movieSlug);
+    this.movie = filteredMovie;
     this.movies = filteredArray;
   }
 }
